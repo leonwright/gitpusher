@@ -37,5 +37,10 @@ func run(ctx context.Context, c *config.RunConfig, out io.Writer) error {
 	cmd := commander.Command{Parts: commitCmd}
 	cmd.RunCommand()
 
+	pushCmd := []string{"git", "push", "origin", "master"}
+
+	pshCmd := commander.Command{Parts: pushCmd}
+	pshCmd.RunCommand()
+
 	return nil
 }
