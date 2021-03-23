@@ -10,7 +10,7 @@ import (
 
 func (c *Command) RunCommand() {
 	cmd := exec.Command(c.Parts[0], c.Parts[1:]...)
-	fmt.Println(cmd.String())
+	// fmt.Println(cmd.String())
 
 	//cmd.Stdin = strings.NewReader("and old falcon")
 
