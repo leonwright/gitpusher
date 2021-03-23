@@ -1,6 +1,6 @@
 package config
 
-import "github.com/namsral/flag"
+import "flag"
 
 type RunConfig struct {
 	CommitMessage string
@@ -15,9 +15,9 @@ func (c *RunConfig) Init(args []string) error {
 	var (
 		commitMessage = flags.String("m", "", "commit message")
 		push          = flags.Bool("p", true, "push to origin")
-		sign          = flags.Bool("s", true, "sign the commit")
-		tag           = flags.Bool("s", true, "tag the commit")
-		tagLabel      = flags.String("s", "", "label the tag (only required if -s true)")
+		sign          = flags.Bool("s", false, "sign the commit")
+		tag           = flags.Bool("t", true, "tag the commit")
+		tagLabel      = flags.String("tl", "", "label the tag (only required if -t true)")
 	)
 	if err := flags.Parse(args[1:]); err != nil {
 		return err

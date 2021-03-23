@@ -10,23 +10,16 @@ type Service interface {
 	PromptForString(p Prompt) string
 }
 
-type service struct {
-}
-
-func NewService() Service {
-	return &service{}
-}
-
-func (s *service) Prompt(p Prompt) {
+func (p *Prompt) Prompt() {
 	fmt.Print(p.Text)
 }
 
-func (s *service) PromptForBool(p Prompt) (response bool) {
-	s.Prompt(p)
+func (p *Prompt) PromptForBool() (response bool) {
+	p.Prompt()
 	return
 }
 
-func (s *service) PromptForString(p Prompt) (response string) {
-	s.Prompt(p)
+func (p *Prompt) PromptForString() (response string) {
+	p.Prompt()
 	return
 }
